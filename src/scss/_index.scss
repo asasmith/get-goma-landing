@@ -1,4 +1,408 @@
-body {
-  font-family: var(--bodyFont);
-  color: var(--color)  
+// todo
+// hover effects on buttons
+
+@custom-media --lg-mobile (min-width: 25rem);
+@custom-media --tablet (min-width: 48rem);
+@custom-media --laptop (min-width: 62rem);
+@custom-media --lg-laptop (min-width: 100rem);
+@custom-media --lg-screen (min-width: 125rem);
+
+
+#landing {
+  color: var(--mainBlue);
+  font: normal 100%/150% var(--bodyFont);
+
+  a, .button {
+    pointer-events: cursor;
+  }
+
+  h1, h2, h3 {
+    text-transform: capitalize;
+  }
+
+  h1, 
+  .h1 {
+    font-size: 225%;
+    font-weight: 700;
+    line-height: 2.5rem;
+    margin-bottom: .7em;
+  }
+
+  h2,
+  .h2 {
+    font-size: 200%;
+    font-weight: 700;
+    line-height: 2rem;
+    margin-bottom: 0.7em;
+  }
+
+  h3,
+  .h3 {
+    font-size: 150%;
+    line-height: 2rem;
+  }
+
+  h4,
+  .h4 {
+    font-size: 125%;
+    line-height: 2rem;
+  }
+
+  p {
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  .button {
+    background-color: var(--green);
+    display: inline-block;
+    font-size: 1.25rem;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  // style header logo svg
+  #logo-stacked__white {
+
+    .cls-2 {
+      fill: var(--white)
+    }
+
+    .cls-3 {
+      fill: var(--mGray);
+    }
+
+    .cls-4 {
+      fill: var(--white);
+    }
+  }
+
+  header {
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    width: 100%;
+
+    @media screen and (min-width: 26rem) {
+      max-width: 70%;
+      margin: auto;
+    }
+    .logo-stacked__white {
+      width: 8rem;
+      
+      @media screen and (max-width: 30rem) {
+        margin: auto;
+      }
+    }
+
+    a {
+      align-self: center;
+
+      @media screen and (max-width: 30rem) {
+        margin-bottom: 0;
+        position: fixed;
+        padding: 2rem 0;
+        text-align: center;
+        width: 100%;
+        bottom: 0;
+        background-color: var(--green)
+      }
+    }
+
+  }
+
+  main {
+    background-color: var(--mainBlue);
+
+    .hero {
+      align-items: center;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      min-height: 40rem;
+      justify-content: space-around;
+      margin: auto;
+
+      @media screen and (--tablet) {
+        flex-direction: row;
+        max-width: 80%;
+        justify-content: space-between;
+      }
+
+      .col {
+        align-self: center;
+        flex: 0 1 auto;
+        max-width: 90%;
+        text-align: center;
+
+        @media screen and (--tablet) {
+          max-width: 45%;
+          text-align: left;
+        }
+
+        &.animation-wrapper {
+          order: 1;
+
+          @media screen and (--tablet) {
+            order: 2;
+          }
+        }
+
+        &.content-wrapper {
+          order: 2;
+        }
+
+        figure {
+          position: relative;
+
+          img {
+            width: 100%;
+          }
+
+          .screen {
+            position: absolute;
+            width: 76%;
+            top: 5%;
+            left: 12.15%;
+          }
+
+        }
+      }
+    }
+  }
+
+  .full-width-banner__hero {
+    background-color: var(--lBlue);
+    color: var(--mainBlue);
+    font-weight: 400;
+    padding: 4rem 1rem;
+
+    p {
+
+      &.center-align {
+        text-align: center;
+        width: 100%;
+        margin: auto;
+        line-height: 3rem;
+
+        @media screen and (--tablet) {
+          width: 85%;
+        }
+
+        @media screen and (--laptop) {
+          width: 65%;
+        }
+
+        @media screen and (--lg-laptop) {
+          max-width: 40%;
+        }
+      }
+
+      &:nth-of-type(1) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  #features {
+
+    .row {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 4rem auto;
+      text-align: left;
+      width: 95%;
+
+      @media screen and (--tablet) {
+        flex-direction: row;
+        margin: 8rem auto;
+        width: 80%;
+      }
+
+      &.reverse {
+
+        figure {
+
+          @media screen and (--tablet) {
+            order: 2; 
+          }
+        }
+      }
+
+      .col {
+        align-self: center;
+        flex: 0 1 auto;
+        width: 90%; 
+
+        @media screen and (--tablet) {
+          width: 45%; 
+        }
+      }
+   
+      figure {
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+  .full-width-banner__cards {
+    background-color: var(--lBlue);
+    color: var(--mainBlue);
+    font-weight: 400;
+    padding: 4rem 1rem;
+    
+    .row {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 4rem auto;
+      text-align: left;
+      width: 95%;
+
+      @media screen and (--tablet) {
+        flex-direction: row;
+        width: 80%;
+      }
+
+      .content {
+        flex: 1 1 auto;
+        width: 100%;
+
+        @media screen and (--tablet) {
+          width: 45%;
+          margin-right: 4rem;
+        }
+      }
+
+      figure {
+        background-color: var(--white);
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        padding: 2rem;
+
+        @media screen and (--tablet) {
+          flex-direction: row;
+          width: 35rem;
+        }
+
+        img {
+          width: 4rem;
+          height: 6rem;
+        }
+
+        figcaption {
+          flex: 1 1 auto;
+          padding-left: 2rem;
+        }
+      }
+
+    } 
+  }
+
+  .full-width-banner__blockquote {
+    background-color: var(--lBlue);
+    padding-bottom: 6rem;
+
+    blockquote {
+      align-items: center;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      height: 45vh;
+      justify-content: flex-end;
+      margin: auto;
+      padding-bottom: 2rem;
+      text-align: center;
+      width: 80%;
+
+      @media screen and (--tablet) {
+        height: 17rem;
+      }
+
+      @media screen and (--laptop) {
+        height: 15rem;
+        width: 70%;
+      }
+
+      @media screen and (--lg-laptop) {
+        height: 15rem;
+        width: 50%;
+      }
+
+      p {
+        max-width: 75%;
+        margin-bottom: .5rem;
+        position: relative;
+
+        &:before {
+          content: url(../img/quote-wedge.svg);
+          height: 4rem;
+          position: absolute;
+          top: -4.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 4rem;
+        }
+      }
+
+      cite {
+        font-style: normal;
+      }
+    }
+  }
+
+
+
+  footer {
+    align-items: center;
+    background-color: var(--mainBlue);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 45vh;
+
+    @media screen and (--tablet) {
+      justify-content: center;
+      min-height: 35vh;
+    }
+
+    h1 {
+      max-width: 90%;
+      text-align: center;
+      text-transform: none;
+
+      @media screen and (--tablet) {
+        text-align: left;
+      }
+    }
+
+    p {
+      max-width: 90%;
+      text-align: center;
+
+      @media screen and (--tablet) {
+        text-align: left;
+      }
+    }
+
+  }
+
 }
