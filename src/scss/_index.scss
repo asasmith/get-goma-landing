@@ -13,7 +13,12 @@
   font: normal 100%/150% var(--bodyFont);
 
   a, .button {
-    pointer-events: cursor;
+    cursor: pointer;
+  }
+
+  .button {
+    margin-bottom: 2rem;
+    text-transform: capitalize;
   }
 
   h1, h2, h3 {
@@ -56,7 +61,6 @@
   a {
     color: var(--white);
     text-decoration: none;
-    text-transform: capitalize;
   }
 
   .button {
@@ -113,7 +117,8 @@
         text-align: center;
         width: 100%;
         bottom: 0;
-        background-color: var(--green)
+        background-color: var(--green);
+        z-index: 5;
       }
     }
 
@@ -379,9 +384,12 @@
     justify-content: space-evenly;
     min-height: 45vh;
 
+    @media screen and (max-width: 414px) {
+      margin-bottom: 6rem;
+      padding: 1rem;
+    }
     @media screen and (--tablet) {
       justify-content: center;
-      min-height: 35vh;
     }
 
     h1 {

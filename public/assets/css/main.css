@@ -47,7 +47,11 @@ figure {
 
 }
 #landing a, #landing .button {
-    pointer-events: cursor;
+    cursor: pointer;
+  }
+#landing .button {
+    margin-bottom: 2rem;
+    text-transform: capitalize;
   }
 #landing h1, #landing h2, #landing h3 {
     text-transform: capitalize;
@@ -84,7 +88,6 @@ figure {
     color: #fff;
     color: var(--white);
     text-decoration: none;
-    text-transform: capitalize;
   }
 #landing .button {
     background-color: #78c7a5;
@@ -144,7 +147,8 @@ figure {
         width: 100%;
         bottom: 0;
         background-color: #78c7a5;
-        background-color: var(--green)
+        background-color: var(--green);
+        z-index: 5
     }
       }
 #landing main {
@@ -395,10 +399,16 @@ figure {
     min-height: 45vh;
 
   }
+@media screen and (max-width: 414px) {
+#landing footer {
+      margin-bottom: 6rem;
+      padding: 1rem
+
+  }
+    }
 @media screen and (min-width: 48rem) {
 #landing footer {
-      justify-content: center;
-      min-height: 35vh
+      justify-content: center
 
   }
     }
