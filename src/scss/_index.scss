@@ -12,13 +12,8 @@
   color: var(--mainBlue);
   font: normal 100%/150% var(--bodyFont);
 
-  a, .button {
+  a, .btn {
     cursor: pointer;
-  }
-
-  .button {
-    margin-bottom: 2rem;
-    text-transform: capitalize;
   }
 
   h1, h2, h3 {
@@ -63,13 +58,35 @@
     text-decoration: none;
   }
 
-  .button {
-    background-color: var(--green);
+  .btn {
+    border-radius: 2rem;
     display: inline-block;
     font-size: 1.25rem;
     padding: 1rem 1.5rem;
-    border-radius: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+    min-width: 10rem;
+  }
+
+  .btn__main {
+    background-color: var(--green);
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: box-shadow 200ms ease, transform 200ms ease;
+
+    &:hover {
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 20px 20px rgba(0,0,0,0.22);
+      transform: scale(1.03);
+    }
+
+    &:active {
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      transform: scale(1)
+    }
+  }
+
+  .btn__clear {
+    border: 1px solid var(--white);
   }
 
   // style header logo svg
@@ -96,7 +113,7 @@
     width: 100%;
 
     @media screen and (min-width: 26rem) {
-      max-width: 70%;
+      max-width: 80%;
       margin: auto;
     }
     .logo-stacked__white {
@@ -107,21 +124,40 @@
       }
     }
 
-    a {
-      align-self: center;
 
-      @media screen and (max-width: 30rem) {
+    .login {
+      display: flex;
+
+        @media screen and (max-width: 30rem) {
+          background-color: var(--green);
+          bottom: 0;
+          justify-content: space-around;
+          padding: 2rem 0;
+          position: fixed;
+          margin-bottom: 0;
+          text-align: center;
+          width: 100%;
+          z-index: 5;
+
+          > .btn {
+            margin-bottom: 0;
+          }
+
+          > .btn__main {
+            background-color: var(--mainBlue)
+          }
+        }
+
+      a {
+        align-self: center;
+        padding: .5rem 1.5rem;
         margin-bottom: 0;
-        position: fixed;
-        padding: 2rem 0;
-        text-align: center;
-        width: 100%;
-        bottom: 0;
-        background-color: var(--green);
-        z-index: 5;
+
+        &:first-of-type {
+          margin-right: 1rem;
+        }
       }
     }
-
   }
 
   main {
