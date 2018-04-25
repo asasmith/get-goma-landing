@@ -359,19 +359,85 @@
   .full-width-banner__blockquote {
     background-color: var(--lBlue);
     padding-bottom: 6rem;
+    position: relative;
 
-    blockquote {
-      align-items: center;
+    span {
+      border-bottom: 2px solid var(--mainBlue);
+      border-left: 2px solid var(--mainBlue);
+      height: 2rem;
+      position: absolute;
+      top: 50%;
+      width: 2rem;
+      z-index: 1;
+
+      &.slide-l {
+        left: 15%;
+        transform: rotate(45deg);
+      }
+
+      &.slide-r {
+        right: 15%;
+        transform: rotate(-135deg);
+      }
+    }
+
+    .blockquote__wrapper {
+      align-items: flex-end;
       background: var(--white);
       box-shadow: var(--shadow);
       display: flex;
+      height: 50vh;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      width: 80%;
+
+      @media screen and (--tablet) {
+        height: 35vh;
+      }
+
+      @media screen and (--laptop) {
+        height: 45vh;
+      }
+    }
+
+    .slide-wrapper {
+      display: flex;
+      left: -100%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      max-width: 100%;
+      transform: translateX(100%);
+
+      &.is-reversing {
+        transform: translateX(-100%);
+      }
+
+      &.is-set {
+        transform: none;
+        transition: transform 500ms ease-out; 
+      }
+    }
+
+    blockquote {
+      align-items: center;
+      display: flex;
       flex-direction: column;
       height: 45vh;
-      justify-content: flex-end;
-      margin: auto;
-      padding-bottom: 2rem;
+      justify-content: center;
+      min-width: 100%;
+      order: 2;
       text-align: center;
-      width: 80%;
+
+
+
+
+      &.is-ref {
+        order: 1;
+      }
+
 
       @media screen and (--tablet) {
         height: 17rem;
