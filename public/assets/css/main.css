@@ -330,12 +330,12 @@ figure {
     }
 @media screen and (min-width: 70rem) {
 #landing .full-width-banner__cards {
-      min-height: 70vh 
+      min-height: 85vh 
   }
     }
 @media screen and (min-width: 88rem) {
 #landing .full-width-banner__cards {
-      min-height: 55vh 
+      min-height: 65vh 
   }
     }
 #landing .full-width-banner__cards .row {
@@ -451,7 +451,6 @@ figure {
         }
 #landing .full-width-banner__cards .row figure img {
           height: 5rem;
-          width: 5rem;
         }
 #landing .full-width-banner__cards .row figure figcaption {
           flex: 1 1 auto;
@@ -532,7 +531,7 @@ figure {
       }
 @media screen and (min-width: 70rem) {
 #landing .full-width-banner__blockquote .blockquote__wrapper {
-        height: 32vh;
+        height: 40vh;
         width: 80%
     }
       }

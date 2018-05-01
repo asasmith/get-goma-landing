@@ -316,11 +316,11 @@
     }
 
     @media screen and (--laptop) {
-      min-height: 70vh;
+      min-height: 85vh;
     }
 
     @media screen and (--lg-laptop) {
-      min-height: 55vh;
+      min-height: 65vh;
     }
     
     .row {
@@ -425,7 +425,6 @@
 
         img {
           height: 5rem;
-          width: 5rem;
         }
 
         figcaption {
@@ -506,7 +505,7 @@
       }
 
       @media screen and (--laptop) {
-        height: 32vh;
+        height: 40vh;
         width: 80%;
       }
 
