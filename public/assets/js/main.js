@@ -49,6 +49,54 @@ function sliderHandler (e) {
       return slider.lastElementChild
     }
   }
-
-
 }
+
+const cardShuffleIcon = document.querySelector('.full-width-banner__cards svg')
+
+
+cardShuffleIcon.addEventListener('click', (e) => {
+  if (e.target.classList.contains('spin')) {
+    e.target.classList.remove('spin')
+  } else {
+    e.target.classList.add('spin')
+  }
+   
+  cardsAnimation()
+})
+
+// function removeTransition (e) {
+//   if (e.propertyName !== 'transform') return
+
+//   this.classList.remove('spin')
+// }  
+
+// cardShuffleIcon.addEventListener('transitionend', removeTransition)
+
+function cardsAnimation () {
+  const cards = document.querySelectorAll('.full-width-banner__cards figure')
+  console.log(cards)
+
+  cards.forEach((card) => {
+    if (card.classList.contains('first')) {
+      card.classList.add('is-animating')
+      card.classList.remove('first')
+
+      setTimeout(function () {
+        card.classList.add('active')
+        card.classList.remove('is-animating')
+      }, 250)
+    } else if (card.classList.contains('second')) {
+      card.classList.add('first')
+      card.classList.remove('second')
+    } else if (card.classList.contains('active')) {
+      card.classList.add('second')
+      card.classList.remove('active')
+    } 
+  })
+}
+
+
+
+// setInterval(function () {
+  // cardsAnimation()
+// }, 5000)

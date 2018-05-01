@@ -166,7 +166,7 @@ figure {
           margin-bottom: 0;
           text-align: center;
           width: 100%;
-          z-index: 5
+          z-index: 15
     }
 
           #landing header .login > .btn {
@@ -262,12 +262,12 @@ figure {
           width: 85%
       }
         }
-@media screen and (min-width: 62rem) {
+@media screen and (min-width: 70rem) {
 #landing .full-width-banner__hero p.center-align {
           width: 65%
       }
         }
-@media screen and (min-width: 100rem) {
+@media screen and (min-width: 88rem) {
 #landing .full-width-banner__hero p.center-align {
           max-width: 40%
       }
@@ -314,22 +314,42 @@ figure {
     color: #0B4876;
     color: var(--mainBlue);
     font-weight: 400;
-    padding: 4rem 1rem; 
+    min-height: 110vh;
+    padding: 2rem 1rem; 
   }
+@media screen and (min-width: 48rem) {
+#landing .full-width-banner__cards {
+      min-height: 75vh;
+      padding: 4rem 1rem 
+  }
+    }
+@media screen and (min-width: 1000px) {
+#landing .full-width-banner__cards {
+      min-height: 60vh 
+  }
+    }
+@media screen and (min-width: 70rem) {
+#landing .full-width-banner__cards {
+      min-height: 70vh 
+  }
+    }
+@media screen and (min-width: 88rem) {
+#landing .full-width-banner__cards {
+      min-height: 55vh 
+  }
+    }
 #landing .full-width-banner__cards .row {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       margin: 4rem auto;
+      position: relative;
       text-align: left;
       width: 95%;
-
     }
 @media screen and (min-width: 48rem) {
 #landing .full-width-banner__cards .row {
         flex-direction: row;
         width: 80%
-
     }
       }
 #landing .full-width-banner__cards .row .content {
@@ -338,8 +358,34 @@ figure {
       }
 @media screen and (min-width: 48rem) {
 #landing .full-width-banner__cards .row .content {
-          width: 45%;
+          max-width: 50%;
           margin-right: 4rem
+      }
+        }
+@media screen and (min-width: 70rem) {
+#landing .full-width-banner__cards .row .content {
+          max-width: 40%
+      }
+        }
+@media screen and (min-width: 88rem) {
+#landing .full-width-banner__cards .row .content {
+          max-width: 50%
+      }
+        }
+#landing .full-width-banner__cards .row .card-wrapper {
+        position: relative;
+        top: 6rem;
+      }
+@media screen and (min-width: 48rem) {
+#landing .full-width-banner__cards .row .card-wrapper {
+          left: -20rem;
+          top: 18rem
+      }
+        }
+@media screen and (min-width: 70rem) {
+#landing .full-width-banner__cards .row .card-wrapper {
+          left: 0;
+          top: 0
       }
         }
 #landing .full-width-banner__cards .row figure {
@@ -351,22 +397,94 @@ figure {
         flex-direction: row;
         height: auto;
         justify-content: space-between;
-        padding: 2rem;
+        min-height: 325px;
+        padding: 1rem;
+        position: absolute;
+        transition: -webkit-transform 250ms ease-in;
+        transition: transform 250ms ease-in;
+        transition: transform 250ms ease-in, -webkit-transform 250ms ease-in;
       }
 @media screen and (min-width: 48rem) {
 #landing .full-width-banner__cards .row figure {
           flex-direction: row;
+          left: 50%;
+          padding: 2rem;
           width: 35rem
       }
         }
+#landing .full-width-banner__cards .row figure.active {
+          /* animation-duration: 1000ms;*/
+          /* animation-name: shuffle;*/
+          z-index: 5;
+        }
+@media screen and (min-width: 48rem) {
+            
+          }
+#landing .full-width-banner__cards .row figure.first {
+          -webkit-transform: translateY(-4rem);
+                  transform: translateY(-4rem);
+          z-index: 3;
+        }
+@media screen and (min-width: 48rem) {
+#landing .full-width-banner__cards .row figure.first {
+            -webkit-transform: translateY(-2rem) translateX(-2rem);
+                    transform: translateY(-2rem) translateX(-2rem)
+        }
+          }
+#landing .full-width-banner__cards .row figure.second {
+          -webkit-transform: translateY(-2rem);
+                  transform: translateY(-2rem);
+          z-index: 4;
+        }
+@media screen and (min-width: 48rem) {
+#landing .full-width-banner__cards .row figure.second {
+            -webkit-transform: translateX(-1rem) translateY(-1rem);
+                    transform: translateX(-1rem) translateY(-1rem)
+        }
+          }
+#landing .full-width-banner__cards .row figure.is-animating {
+          /* animation-duration: 1000ms;*/
+          /* animation-name: shuffle;*/
+          -webkit-transform: translateY(7rem) translateX(4rem);
+                  transform: translateY(7rem) translateX(4rem);
+          /* z-index: 10;*/
+        }
 #landing .full-width-banner__cards .row figure img {
-          width: 4rem;
-          height: 6rem;
+          height: 5rem;
+          width: 5rem;
         }
 #landing .full-width-banner__cards .row figure figcaption {
           flex: 1 1 auto;
           padding-left: 2rem;
         }
+#landing .full-width-banner__cards svg {
+    position: absolute;
+    right: 18.5rem;
+    top: 15rem;
+    transition: -webkit-transform 400ms ease;
+    transition: transform 400ms ease;
+    transition: transform 400ms ease, -webkit-transform 400ms ease;
+    width: 3rem;
+    z-index: 10;
+}
+@media screen and (min-width: 48rem) {
+#landing .full-width-banner__cards svg {
+      right: -36.5rem;
+      top: 5rem
+}
+    }
+#landing .full-width-banner__cards svg.spin {
+      -webkit-transform: rotate(1turn);
+              transform: rotate(1turn);
+    }
+#landing #rotate .cls-1 {
+      fill: #78c7a5;
+      fill: var(--green);
+    }
+#landing #rotate .cls-2 {
+      fill: #fff;
+      fill: var(--white);
+    }
 #landing .full-width-banner__blockquote {
     background-color: #edf1f5;
     background-color: var(--lBlue);
@@ -385,12 +503,12 @@ figure {
       z-index: 1;
     }
 #landing .full-width-banner__blockquote span.slide-l {
-        left: 15%;
+        left: 5%;
         -webkit-transform: rotate(45deg);
                 transform: rotate(45deg);
       }
 #landing .full-width-banner__blockquote span.slide-r {
-        right: 15%;
+        right: 5%;
         -webkit-transform: rotate(-135deg);
                 transform: rotate(-135deg);
       }
@@ -401,20 +519,26 @@ figure {
       box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
       box-shadow: var(--shadow);
       display: flex;
-      height: 50vh;
+      height: 55vh;
       margin: auto;
       overflow: hidden;
       position: relative;
-      width: 80%;
+      width: 90%;
     }
 @media screen and (min-width: 48rem) {
 #landing .full-width-banner__blockquote .blockquote__wrapper {
         height: 35vh
     }
       }
-@media screen and (min-width: 62rem) {
+@media screen and (min-width: 70rem) {
 #landing .full-width-banner__blockquote .blockquote__wrapper {
-        height: 45vh
+        height: 32vh;
+        width: 80%
+    }
+      }
+@media screen and (min-width: 88rem) {
+#landing .full-width-banner__blockquote .blockquote__wrapper {
+        max-width: 50%
     }
       }
 #landing .full-width-banner__blockquote .slide-wrapper {
@@ -457,13 +581,13 @@ figure {
         height: 17rem
     }
       }
-@media screen and (min-width: 62rem) {
+@media screen and (min-width: 70rem) {
 #landing .full-width-banner__blockquote blockquote {
         height: 15rem;
         width: 70%
     }
       }
-@media screen and (min-width: 100rem) {
+@media screen and (min-width: 88rem) {
 #landing .full-width-banner__blockquote blockquote {
         height: 15rem;
         width: 50%

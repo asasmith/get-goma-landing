@@ -3,8 +3,8 @@
 
 @custom-media --lg-mobile (min-width: 25rem);
 @custom-media --tablet (min-width: 48rem);
-@custom-media --laptop (min-width: 62rem);
-@custom-media --lg-laptop (min-width: 100rem);
+@custom-media --laptop (min-width: 70rem);
+@custom-media --lg-laptop (min-width: 88rem);
 @custom-media --lg-screen (min-width: 125rem);
 
 
@@ -137,7 +137,7 @@
           margin-bottom: 0;
           text-align: center;
           width: 100%;
-          z-index: 5;
+          z-index: 15;
 
           > .btn {
             margin-bottom: 0;
@@ -303,13 +303,31 @@
     background-color: var(--lBlue);
     color: var(--mainBlue);
     font-weight: 400;
-    padding: 4rem 1rem;
+    min-height: 110vh;
+    padding: 2rem 1rem;
+
+    @media screen and (--tablet) {
+      min-height: 75vh;
+      padding: 4rem 1rem;
+    }
+
+    @media screen and (min-width: 1000px) {
+      min-height: 60vh;
+    }
+
+    @media screen and (--laptop) {
+      min-height: 70vh;
+    }
+
+    @media screen and (--lg-laptop) {
+      min-height: 55vh;
+    }
     
     .row {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       margin: 4rem auto;
+      position: relative;
       text-align: left;
       width: 95%;
 
@@ -323,8 +341,31 @@
         width: 100%;
 
         @media screen and (--tablet) {
-          width: 45%;
+          max-width: 50%;
           margin-right: 4rem;
+        }
+
+        @media screen and (--laptop) {
+          max-width: 40%
+        }
+
+        @media screen and (--lg-laptop) {
+          max-width: 50%;
+        }
+      }
+
+      .card-wrapper {
+        position: relative;
+        top: 6rem;
+
+        @media screen and (--tablet) {
+          left: -20rem;
+          top: 18rem;
+        }
+
+        @media screen and (--laptop) {
+          left: 0;
+          top: 0;
         }
       }
 
@@ -335,16 +376,56 @@
         flex-direction: row;
         height: auto;
         justify-content: space-between;
-        padding: 2rem;
+        min-height: 325px;
+        padding: 1rem;
+        position: absolute;
+        transition: transform 250ms ease-in;
 
         @media screen and (--tablet) {
           flex-direction: row;
+          left: 50%;
+          padding: 2rem;
           width: 35rem;
         }
 
+        &.active {
+          // animation-duration: 1000ms;
+          // animation-name: shuffle;
+          z-index: 5;
+
+          @media screen and (--tablet) {
+            
+          }
+        }
+
+        &.first {
+          transform: translateY(-4rem);
+          z-index: 3;
+
+          @media screen and (--tablet) {
+            transform: translateY(-2rem) translateX(-2rem);
+          }
+        }
+
+        &.second {
+          transform: translateY(-2rem);
+          z-index: 4;
+
+          @media screen and (--tablet) {
+            transform: translateX(-1rem) translateY(-1rem);
+          }
+        }
+
+        &.is-animating {
+          // animation-duration: 1000ms;
+          // animation-name: shuffle;
+          transform: translateY(7rem) translateX(4rem);
+          // z-index: 10;
+        }
+
         img {
-          width: 4rem;
-          height: 6rem;
+          height: 5rem;
+          width: 5rem;
         }
 
         figcaption {
@@ -352,8 +433,36 @@
           padding-left: 2rem;
         }
       }
-
     } 
+  }
+
+  .full-width-banner__cards svg {
+    position: absolute;
+    right: 18.5rem;
+    top: 15rem;
+    transition: transform 400ms ease;
+    width: 3rem;
+    z-index: 10;
+
+    @media screen and (--tablet) {
+      right: -36.5rem;
+      top: 5rem;
+    }
+
+    &.spin {
+      transform: rotate(1turn);
+    }
+}
+
+  & #rotate {
+
+    & .cls-1 {
+      fill: var(--green);
+    }
+
+    & .cls-2 {
+      fill: var(--white);
+    }
   }
 
   .full-width-banner__blockquote {
@@ -371,12 +480,12 @@
       z-index: 1;
 
       &.slide-l {
-        left: 15%;
+        left: 5%;
         transform: rotate(45deg);
       }
 
       &.slide-r {
-        right: 15%;
+        right: 5%;
         transform: rotate(-135deg);
       }
     }
@@ -386,18 +495,23 @@
       background: var(--white);
       box-shadow: var(--shadow);
       display: flex;
-      height: 50vh;
+      height: 55vh;
       margin: auto;
       overflow: hidden;
       position: relative;
-      width: 80%;
+      width: 90%;
 
       @media screen and (--tablet) {
         height: 35vh;
       }
 
       @media screen and (--laptop) {
-        height: 45vh;
+        height: 32vh;
+        width: 80%;
+      }
+
+      @media screen and (--lg-laptop) {
+        max-width: 50%;
       }
     }
 
